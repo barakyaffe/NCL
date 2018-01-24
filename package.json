@@ -7,6 +7,7 @@
     "start": "ng serve --port 4201 -o",
     "build": "ng build --prod",
     "test": "ng test",
+    "mock": "json-server mock/db.json -w -d 2000",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
