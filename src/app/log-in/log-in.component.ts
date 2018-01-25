@@ -55,6 +55,7 @@ export class LogInComponent implements OnInit {
     }
   }
 
+
   redirectUser(user: IUser) {
     if (user.Position === 'TW') {
       /*redirect to TW component*/

@@ -3,3 +3,30 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 
+.frame {
+  height: 30px;
+  fill: white;
+  stroke-width: 1;
+  stroke: #2B3856;
+  cursor: pointer;
+}
+
+
+.border_r {
+  width: 5px;
+  height: 31px;
+  fill: #2B3856;
+  cursor: e-resize;
+}
+
+
+.sentence {
+  color: black;
+  stroke: grey;
+  cursor: pointer;
+}
+
+.removeIcone {
+  width: 10px;
+  height: 10px;
+}
