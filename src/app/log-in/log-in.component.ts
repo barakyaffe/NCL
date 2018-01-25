@@ -11,7 +11,6 @@ import {Router} from '@angular/router';
 export class LogInComponent implements OnInit {
 
   private users: IUser[];
-  // model: any = {};
   public username: string;
   public pass: string;
   public errorMessage: string;
