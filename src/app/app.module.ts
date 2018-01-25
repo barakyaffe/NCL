@@ -13,6 +13,7 @@ import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
 import { MainComponent } from './shared/components/main/main.component';
 import { SearchComponent } from './shared/components/search/search.component';
 import { GalleryComponent } from './shared/components/gallery/gallery.component';
+import {BsDropdownModule} from 'ngx-bootstrap';
 import {NclService} from './shared/services/ncl.service';
 
 
@@ -31,7 +32,8 @@ import {NclService} from './shared/services/ncl.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [NclService],
   bootstrap: [AppComponent]
