@@ -8,7 +8,7 @@ export class NclService {
 
 
   private selectedScreens: any[];
-  private projectInfo: IProjectInfo;
+  public projectInfo: IProjectInfo = {id: 0, name: '', screenList: []};
 
 
   constructor(private screenService: ScreenService, private  nclHttpService: NclHttpService) {
@@ -18,6 +18,9 @@ export class NclService {
     this.selectedScreens.push({id: 4, text: 'Categories', x: 317, y: 178, w: 120});
     this.selectedScreens.push({id: 5, text: 'Payees', x: 317, y: 209, w: 120});
     // @CrossOrigin
+
+
+    this.nclHttpService.getProject({projectID: 1});
 
   }
 

@@ -7,6 +7,7 @@ export interface IScreenInfo {
   screenId: number;
   projectId: number;
   path: string;
+  selected?: boolean;
 
 
   sentenceList: ISentences[];
