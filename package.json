@@ -37,6 +37,7 @@
     "@types/node": "^6.0.96",
     "bootstrap": "^4.0.0",
     "bootstrap-select": "^1.12.4",
+    "bootstrap": "^4.0.0",
     "codelyzer": "^4.0.1",
     "d3": "^4.12.2",
     "jasmine-core": "~2.8.0",
