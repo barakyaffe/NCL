@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import * as d3 from 'd3';
+import {NclService} from '../../services/ncl.service';
 
 
 @Component({
@@ -20,19 +21,16 @@ export class MainComponent implements OnInit {
   private groups: any;
   private onUpdateDataset: (data: any) => {};
 
-  constructor() {
+
+  constructor(private nclService: NclService) {
 
     this.width = 900;
     this.height = 600;
 
-    this.data = [];
-    this.data.push({id: 3, text: 'TimeFrame', x: 316, y: 146, w: 120});
-    this.data.push({id: 4, text: 'Categories', x: 317, y: 178, w: 120});
-    this.data.push({id: 5, text: 'Payees', x: 317, y: 209, w: 120});
+    nclService.setScreens = this.setData;
 
 
     this.onUpdateDataset = (data: any) => {
-      alert('test');
       return null;
     };
 
@@ -51,8 +49,7 @@ export class MainComponent implements OnInit {
       .attr('width', this.width)
       .attr('height', this.height);
 
-
-    model.setData(model.data);
+    this.nclService.updateScreen();
 
 
   }
@@ -78,12 +75,16 @@ export class MainComponent implements OnInit {
       model.onUpdateDataset(model.data);
       model.setData(model.data);
 
+      model.nclService.updateScreen();
+
     }
   }
 
 
   setData(data: any) {
 
+
+    alert('test nn');
     const model = this;
 
     model.data = data;
