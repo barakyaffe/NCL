@@ -11,7 +11,8 @@ import {FedComponent} from './fed/fed.component';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
+    pathMatch: 'full',
     component: LogInComponent
   },
   {
