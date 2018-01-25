@@ -7,6 +7,12 @@ import {AppRoutingModule} from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { TwComponent } from './tw/tw.component';
 import { FedComponent } from './fed/fed.component';
+import {FormsModule} from '@angular/forms';
+import { DropDownComponent } from './shared/components/drop-down/drop-down.component';
+import { TopBarComponent } from './shared/components/top-bar/top-bar.component';
+import { MainComponent } from './shared/components/main/main.component';
+import { SearchComponent } from './shared/components/search/search.component';
+import { GalleryComponent } from './shared/components/gallery/gallery.component';
 
 
 @NgModule({
@@ -14,11 +20,17 @@ import { FedComponent } from './fed/fed.component';
     AppComponent,
     LogInComponent,
     TwComponent,
-    FedComponent
+    FedComponent,
+    DropDownComponent,
+    TopBarComponent,
+    MainComponent,
+    SearchComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
