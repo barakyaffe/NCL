@@ -84,7 +84,6 @@ export class MainComponent implements OnInit {
   setData(data: any) {
 
 
-    alert('test nn');
     const model = this;
 
     model.data = data;
