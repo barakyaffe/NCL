@@ -1,3 +1,8 @@
-<p>
-  gallery works!
-</p>
+<div class="gl-container">
+  <ul class="gl-list-container">
+    <li *ngFor="let screen of nclService.projectInfo.screenList" class="gl-list-item">
+      <img src="{{getImage(screen.path)}}" alt="{{screen.name}}" class="gl-screen-image">
+      <span class="gl-screen-name">{{getName(screen.name)}}</span>
+    </li>
+  </ul>
+</div>

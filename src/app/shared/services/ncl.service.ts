@@ -19,6 +19,9 @@ export class NclService {
     this.selectedScreens.push({id: 5, text: 'Payees', x: 317, y: 209, w: 120});
     // @CrossOrigin
 
+
+    this.nclHttpService.getProject({projectID: 1});
+
   }
 
 
