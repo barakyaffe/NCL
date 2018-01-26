@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
 
-import * as d3 from 'd3';
 import {NclService} from '../../services/ncl.service';
 
 
@@ -16,8 +15,7 @@ export class MainComponent implements OnInit {
 
 
   constructor(private nclService: NclService) {
-
-
+    // debugger
   }
 
 
@@ -25,6 +23,16 @@ export class MainComponent implements OnInit {
 
     this.nclService.updateScreen();
 
+  }
+
+  getProjectImage(): string {
+
+    if (this.nclService.projectInfo) {
+
+      return 'http://localhost:8080/NCL//GetImage/' + this.nclService.projectInfo.screenList[0].path;
+    }
+
+    return 'http://localhost:8080/NCL//GetImage/logo1.png';
   }
 
 

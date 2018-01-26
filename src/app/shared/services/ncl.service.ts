@@ -7,8 +7,8 @@ import {IProjectInfo} from '../interfaces/IProjectInfo';
 export class NclService {
 
 
-  private selectedScreens: any[];
-  private projectInfo: IProjectInfo;
+  public selectedScreens: any[];
+  public projectInfo: IProjectInfo;
 
 
   constructor(private screenService: ScreenService, private  nclHttpService: NclHttpService) {
