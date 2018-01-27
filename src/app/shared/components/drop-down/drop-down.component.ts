@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {NclService} from '../../services/ncl.service';
 
 @Component({
   selector: 'app-drop-down',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropDownComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  options: any[];
+
+  @Output()
+  selectItem: EventEmitter<Object> = new EventEmitter<Object>();
+
+  constructor(public nclService: NclService) {
+  }
+
+
+  /*public selectproject(id: number) {
+
+    this.nclService.setProject(id);
+  }*/
+
 
   ngOnInit() {
+  }
+
+  selectProject(item: any) {
+    this.selectItem.emit(item);
   }
 
 }

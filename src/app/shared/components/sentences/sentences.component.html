@@ -1,0 +1,20 @@
+<div  style="width: 290px;height: 600px;">
+  <div class="input-group">
+    <div
+      style="display: inline;padding:5px; border: 1px solid #ced4da;width: 30px;border-right:0px;background-color:#F8F8F8	;">
+      <img (click)="nclService.addNewSentence(term)" style="cursor: pointer;" src="../../../../assets/images/add.png" height="20" width="20"/>
+    </div>
+
+    <input type="text" [(ngModel)]="term" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+  </div>
+  <br>
+  <div class="list-group" style="overflow-x: hidden;overflow-y:auto;height: 500px; ">
+    <a *ngFor="let sentence of getDisplaySentemces()" class="list-group-item">
+      <img (click)="nclService.addNewSentence(sentence.text)" style="cursor: pointer;"
+           src="../../../../assets/images/left-arrow.png" height="20" width="20"/>
+      {{ getText(sentence.text) }}
+    </a>
+  </div>
+
+
+</div>

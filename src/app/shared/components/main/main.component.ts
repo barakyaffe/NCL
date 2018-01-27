@@ -21,15 +21,13 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
 
-    this.nclService.updateScreen();
 
   }
 
   getProjectImage(): string {
 
-    if (this.nclService.projectInfo) {
-
-      return 'http://localhost:8080/NCL//GetImage/' + this.nclService.projectInfo.screenList[0].path;
+    if (this.nclService.selectedScreen) {
+      return 'http://localhost:8080/NCL//GetImage/' + this.nclService.selectedScreen.path;
     }
 
     return 'http://localhost:8080/NCL//GetImage/logo1.png';

@@ -3,7 +3,7 @@
     <img src="../../../../assets/images/NCL.PNG" height="160" width="641"/>
   </div>
   <div class="dropdown-container">
-    <app-drop-down></app-drop-down>
+    <app-drop-down [options]="options" (selectItem)="itemSelected($event)"></app-drop-down>
   </div>
 </div>
 

@@ -18,6 +18,7 @@ import {NclService} from './shared/services/ncl.service';
 import {ScreenService} from './shared/services/screen.service';
 import {HttpClientModule} from '@angular/common/http';
 import {NclHttpService} from './shared/services/ncl-http.service';
+import { SentencesComponent } from './shared/components/sentences/sentences.component';
 
 
 
@@ -31,7 +32,8 @@ import {NclHttpService} from './shared/services/ncl-http.service';
     TopBarComponent,
     MainComponent,
     SearchComponent,
-    GalleryComponent
+    GalleryComponent,
+    SentencesComponent
   ],
   imports: [
     BrowserModule,
