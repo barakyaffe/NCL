@@ -1,9 +1,10 @@
 <div class="btn-group" dropdown>
   <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-    Button dropdown <span class="caret"></span>
+    {{nclService.projectInfo.name}} <span class="caret"></span>
   </button>
   <ul *dropdownMenu class="dropdown-menu" role="menu">
-    <li role="menuitem"><a class="dropdown-item" href="#">Policy manager</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Compliance assurance</a></li>
+    <li *ngFor="let option of options" (click)="selectProject(option)" role="menuitem"><a class="dropdown-item" >{{option.name}}</a></li>
   </ul>
 </div>
+
+

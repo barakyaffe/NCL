@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NclService} from '../../services/ncl.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  private options: any[];
+
+  constructor(public nclService: NclService) {
+    this.options = [
+      {
+        id: 1,
+        name: 'Policy manager'
+      },
+      {
+        id: 2,
+        name: 'Compliance assurance'
+      }];
+  }
 
   ngOnInit() {
+
+  }
+
+  public itemSelected(item: any) {
+    this.nclService.setProject(item.id);
   }
 
 }

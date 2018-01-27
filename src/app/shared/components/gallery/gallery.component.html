@@ -1,8 +1,11 @@
+
 <div class="gl-container">
   <ul class="gl-list-container">
-    <li *ngFor="let screen of nclService.projectInfo.screenList" class="gl-list-item">
+    <li *ngFor="let screen of nclService.screens" class="gl-list-item"
+        [ngClass]="{ 'selectedItem' : screen==nclService.selectedScreen }"
+        (click)="nclService.changeScreen(screen)">
       <img src="{{getImage(screen.path)}}" alt="{{screen.name}}" class="gl-screen-image">
-      <span class="gl-screen-name">{{getName(screen.name)}}</span>
+      <span class="gl-screen-name">{{getName(screen)}}</span>
     </li>
   </ul>
 </div>

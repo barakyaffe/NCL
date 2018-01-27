@@ -5,10 +5,10 @@ import {IScreenInfo} from './IScreenInfo';
 export interface IProjectInfo {
 
 
-  name: string;
-  id: number;
+  name?: string;
+  id?: number;
 
 
-  screenList: IScreenInfo[];
+  screenList?: IScreenInfo[];
 
 }

@@ -9,7 +9,6 @@ import {NclService} from '../../services/ncl.service';
 })
 export class GalleryComponent implements OnInit {
 
-  public screens: Array<IScreenInfo>;
 
   constructor(public nclService: NclService) {
   }
@@ -18,11 +17,12 @@ export class GalleryComponent implements OnInit {
   }
 
   public getImage(path: string): string {
-    return '../assets/images/pm-screen1.png';
-    // return 'http://localhost:8080/NCL/getImage/' + path;
+    // return '../assets/images/pm-screen1.png';
+
+    return 'http://localhost:8080/NCL//GetImage/' + path;
   }
 
-  public getName(name: string): string {
-    return 'PM - main screen';
+  public getName(screen: IScreenInfo): string {
+    return screen.path.replace('.png', '');
   }
 }

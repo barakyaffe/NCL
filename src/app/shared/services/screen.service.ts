@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 
 
 import * as d3 from 'd3';
+import {NclService} from './ncl.service';
+import {IScreenInfo} from '../interfaces/IScreenInfo';
 
 
 @Injectable()
@@ -10,12 +12,12 @@ export class ScreenService {
 
   private svg: any;
   private data: any[];
+  private screen: IScreenInfo;
   private groups: any;
-  private onUpdateDataset: (data: any) => {};
 
+  public nclService: NclService;
 
   constructor() {
-
 
   }
 
@@ -33,13 +35,14 @@ export class ScreenService {
 
     function removeIcon(d) {
       model.data = model.data.filter(function (x) {
-        return x.id !== d.id;
+        return x.sentenceKey !== d.sentenceKey;
       });
 
+      // model.nclService.onUpdateDataset(model.data);
+      model.setData(model.data, model.screen);
 
-      model.onUpdateDataset(model.data);
-      model.setData(model.data);
 
+      model.screen.sentenceList = model.data;
 
     }
   }
@@ -51,10 +54,14 @@ export class ScreenService {
   }
 
 
-  setData(data: any) {
+  setData(data: any, screen: IScreenInfo) {
 
+    this.screen = screen;
 
     const model = this;
+
+    d3.select('#svgcontainer>svg').remove();
+
 
     this.svg = d3.select('#svgcontainer')
       .append('svg')
@@ -71,7 +78,7 @@ export class ScreenService {
 
 
     model.groups.attr('class', function (d) {
-      return 'group_' + d.id;
+      return 'group_' + d.sentenceKey;
     });
 
     model.groups.attr('transform', function (d) {
@@ -139,7 +146,7 @@ export class ScreenService {
       })
       .attr('class', 'frame')
       .attr('id', function (d) {
-        d.frameId = 'frame' + d.id;
+        d.frameId = 'frame' + d.sentenceKey;
         return d.frameId;
       });
   }
