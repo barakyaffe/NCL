@@ -10,7 +10,7 @@ export class NclService {
 
 
   public selectedScreens: any[];
-  public projectInfo: IProjectInfo = {name: ''};
+  public projectInfo: IProjectInfo = {name: '', id: 0};
   public selectedScreen: IScreenInfo;
   public screens: IScreenInfo[] = [];
   public allSentences: ISentences[] = [];
